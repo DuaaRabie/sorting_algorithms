@@ -30,11 +30,12 @@ void swap_nodes(listint_t *node1, listint_t *node2, listint_t **list)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *node1 = *list, *node2;
+	listint_t *node1, *node2;
 	bool restart = false;
 
-	if (list && *list && node1 && node1->next)
+	if (list && *list)
 	{
+		node1 = *list;
 		while (node1 && node1->next && !restart)
 		{
 			node2 = node1->next;
