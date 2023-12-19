@@ -33,9 +33,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *node1 = *list, *node2;
 	bool restart = false;
 
-	if (node1 != NULL && node1->next != NULL)
+	if (list != NULL && node1 != NULL && node1->next != NULL)
 	{
-
 		node2 = node1;
 		while (node2 && node2->next && !restart)
 		{
