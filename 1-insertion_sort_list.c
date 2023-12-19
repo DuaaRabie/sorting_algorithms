@@ -35,19 +35,17 @@ void insertion_sort_list(listint_t **list)
 
 	if (list != NULL && node1 != NULL && node1->next != NULL)
 	{
-		node2 = node1;
-		while (node2 && node2->next && !restart)
+		while (node1 && node1->next && !restart)
 		{
-			if (node2->n > node2->next->n)
+			node2 = node1->next;
+			if (node1->n > node2->n)
 			{
-				swap_nodes(node2, node2->next, list);
+				swap_nodes(node1, node2, list);
 				print_list(*list);
 				restart = true;
 			}
-			node2 = node2->next;
+			node1 = node1->next;
 		}
-		node1 = node1->next;
-
 	}
 	if (restart == true)
 		insertion_sort_list(list);
